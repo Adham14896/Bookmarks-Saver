@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bookmarker</title>
+  </head>
+  <body class="bg-success">
+    <h1 class="head-title text-center py-3">Bookmarker</h1>
+    <hr class="w-50 mx-auto" />
+    <div class="w-75 mx-auto d-flex flex-column justify-content-center">
+      <h2 class="text-center">Bookmark your favorite sites</h2>
+      <div
+        id="formAlert"
+        class="alert d-none mx-auto alert-danger py-2 w-75 my-2"
+      >
+        Please Fill The Form
+      </div>
+      <label for="siteName" class="py-2"
+        ><i class="fa-solid fa-book-bookmark"></i> Bookmark Name</label
+      >
+      <input
+        oninput="checkInput(this)"
+        type="text"
+        id="bookmarkName"
+        class="form-control"
+        name="siteName"
+        placeholder="Bookmark Name"
+      />
+      <div id="inputAlert" class="alert d-none alert-danger py-2 w-75 my-2">
+        Please enter a correct name with at least 4 to 12 characters
+      </div>
+      <label for="siteUrl" class="py-2"
+        ><i class="fa-solid fa-link"></i> Website URL</label
+      >
+      <input
+        oninput="checkInput(this)"
+        type="text"
+        id="siteUrl"
+        class="form-control"
+        name="siteUrl"
+        placeholder="Website URL"
+      />
+      <div id="inputAlert" class="alert d-none alert-danger py-2 w-75 my-2">
+        Please enter a correct url address (eg : www.example.com or example.com)
+      </div>
+      <button
+        class="btn btn-light mx-auto w-25 my-3"
+        onclick="addBookmark()"
+        id="addBtn"
+      >
+        Add Bookmark
+      </button>
+    </div>
+
+    <hr class="w-50 mx-auto" />
+    <table class="table text-white w-75 mx-auto">
+      <thead>
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col">Website Name</th>
+          <th scope="col">Visit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="bookmarkContainer"></tbody>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>
